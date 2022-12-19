@@ -1,7 +1,7 @@
 import { Walkers } from "./Walkers.js"
 import { CityList } from "./CityList.js"
 import { Assignments } from "./Assignments.js"
-import { RegisteredPets } from "./RegisteredPets.js"
+import { dogWalkingDisplay, RegisteredPets } from "./RegisteredPets.js"
 
 const mainContainer = document.querySelector("#container")
 
@@ -26,6 +26,12 @@ const applicationHTML = `
     <h2>Current Assignments</h2>
     ${Assignments()}
 </article>
+<h2>New list</h2>
+<article class="assignments">
+    <h2>Current Assignments</h2>
+    ${dogWalkingDisplay()}
+</article>
+
 `
 
 mainContainer.innerHTML = applicationHTML

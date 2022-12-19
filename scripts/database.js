@@ -88,7 +88,7 @@ const database = {
     pets: [{
         id: 1,
         name: "Dianemarie Hartness",
-        walkerId: 3
+        walkerId: 3 
     }, {
         id: 2,
         name: "Christoph Fosdyke",
@@ -125,6 +125,48 @@ const database = {
         id: 10,
         name: "Panda",
         walkerId: 7
+    }],
+    petCity: [{
+        id: 1,
+        petId: 1,
+        cityId: 8
+    },{
+        id:2,
+        petId: 2,
+        cityId: 1
+    },{
+        id:3,
+        petId: 3,
+        cityId: 4
+    },{
+        id:4,
+        petId: 4,
+        cityId: 8
+    },{
+        id:5,
+        petId: 5,
+        cityId: 3
+    },{
+        id:6,
+        petId: 6,
+        cityId: 9
+    },{
+        id:7,
+        petId: 7,
+        cityId: 6
+    },{
+        id:8,
+        petId: 8,
+        cityId: 10
+    },{
+        id:9,
+        petId: 9,
+        cityId: 2
+    },{
+        id:10,
+        petId: 10,
+        cityId: 4
+    },{
     }]
 }
 
@@ -142,4 +184,8 @@ export const getCities = () => {
 
 export const getWalkerCities = () => {
     return database.walkerCities.map(walkerCity => ({...walkerCity}))
+}
+
+export const getPetCities = () => {
+    return database.petCity.map(petCity => ({...petCity}))
 }

@@ -1,7 +1,9 @@
-import { getPets, getWalkers } from "./database.js"
+import { getCities, getPets, getWalkers, getPetCities } from "./database.js"
 
 const pets = getPets()
 const walkers = getWalkers()
+const cities = getCities()
+const petCities = getPetCities()
 
 
 document.addEventListener(
@@ -21,8 +23,6 @@ document.addEventListener(
             into an array and stores the portion after the -- 
             in a variable called petId
             */
-
-            
 
             /*
             the code above iterates through the pets database
@@ -59,5 +59,34 @@ export const RegisteredPets = () => {
     petHTML += "</ul>"
 
     return petHTML
+}
+
+export const dogWalkingDisplay = () => {
+    let matchingCity = []
+    let displayHtml = "<ul>"
+        //iterate through each dog to
+    for (const pet of pets) {
+        for (const city of cities) {
+            for (const petCity of petCities){ 
+                if(petCity.cityId === city.id && pet.id === petCity.petId) {
+                 matchingCity.cityName = city.name
+              
+            }
+            }
+        }
+        for(const walker of walkers)
+            if(pet.walkerId === walker.id){
+                matchingCity.walkerName = walker.name
+            }
+            displayHtml += `
+            <li>
+            ${pet.name} is being walked by
+             ${matchingCity.walkerName} in ${matchingCity.cityName}
+            </li>
+            `
+    }
+        
+    return displayHtml += '</ul>'
+
 }
 
